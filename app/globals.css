@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* GLOBAL BACKGROUND */
 
 body{
@@ -19,7 +20,9 @@ body{
 
   color:#d6f6ff;
   font-family: system-ui, -apple-system, sans-serif;
+  position: relative;
 }
+
 
 /* subtle glow overlay */
 
@@ -27,9 +30,15 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-  background: radial-gradient(circle at top left, rgba(0,255,255,0.12), transparent 60%);
+  background: radial-gradient(
+    circle at top left,
+    rgba(0,255,255,0.12),
+    transparent 60%
+  );
   pointer-events:none;
+  z-index:-1;
 }
+
 
 /* section spacing */
 
@@ -38,6 +47,7 @@ section{
   padding-bottom:80px;
 }
 
+
 /* highlight neon text */
 
 .highlight{
@@ -45,13 +55,15 @@ section{
   font-weight:600;
 }
 
+
 /* secondary text */
 
 .subtext{
   color:#a8d8ff;
 }
 
-/* modern dark cards */
+
+/* modern glass cards */
 
 .card{
   background: rgba(255,255,255,0.06);
@@ -67,30 +79,41 @@ section{
   box-shadow:0 0 20px rgba(55,243,255,0.25);
 }
 
-/* buttons */
+
+/* primary button */
 
 .primary-btn{
-  background: linear-gradient(90deg,#37f3ff,#00b7ff);
+  background: linear-gradient(
+    90deg,
+    #37f3ff,
+    #00b7ff
+  );
   color:#001a33;
   padding:10px 22px;
   border-radius:8px;
   font-weight:600;
+  transition:all 0.2s ease;
 }
 
 .primary-btn:hover{
   box-shadow:0 0 15px rgba(55,243,255,0.6);
 }
 
+
+/* secondary button */
+
 .secondary-btn{
   border:1px solid #37f3ff;
   padding:10px 22px;
   border-radius:8px;
   color:#37f3ff;
+  transition:all 0.2s ease;
 }
 
 .secondary-btn:hover{
   background:rgba(55,243,255,0.1);
 }
+
 
 /* smooth scrolling */
 

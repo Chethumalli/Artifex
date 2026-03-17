@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,8 +27,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+
+        {/* Global particles background */}
+        <ParticlesBackground />
+
+        {/* Website UI */}
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+
+        <main className="relative z-10 min-h-screen">
+          {children}
+        </main>
+
       </body>
     </html>
   );
