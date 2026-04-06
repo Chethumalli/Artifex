@@ -33,10 +33,6 @@ It provides tools for collaboration, secure transactions, analytics, and event m
 ### Backend
 - Node.js
 - Express.js
-
-### Database
-- MongoDB (Atlas)
-
 ---
 
 ## 📂 Project Structure
@@ -82,9 +78,7 @@ npm install
 Create a `.env` file in the backend folder and add:
 
 ```env
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret_key
-PORT=5000
+
 ```
 
 ---
@@ -119,57 +113,6 @@ PUT    /api/order/accept
 PUT    /api/order/reject
 PATCH  /api/order/submit
 ```
-
-### ⭐ Reviews
-```
-GET    /api/review/artwork/
-PATCH  /api/review/addComment
-PATCH  /api/review/updateView
-DELETE /api/review/deleteComment
-```
-
-### 📢 Reports
-```
-GET  /api/report/review/reports
-GET  /api/report/artwork/reports
-POST /api/report/reportComment
-POST /api/report/reportArtwork
-```
-
-### 👥 Follow System
-```
-GET    /api/follow/isFollowing
-POST   /api/follow/followArtist
-DELETE /api/follow/unfollowArtist
-GET    /api/follow/followers
-```
-
-### 🏛️ Museums
-```
-POST  /api/museum/create
-GET   /api/museum
-PATCH /api/museum/edit
-POST  /api/museum/addArtwork
-```
-
----
-
-## 📊 Key Functionalities
-
-- Manage digital art collections  
-- Organize museum exhibitions  
-- Track user engagement & analytics  
-- Enable artist-client transactions  
-- Review and moderation system  
-
----
-
-## 📸 Screenshots (Optional)
-
-_Add your UI screenshots here_
-
----
-
 ## 🛡️ Security
 
 - JWT Authentication  
@@ -193,14 +136,6 @@ git commit -m "Added new feature"
 # Push
 git push origin feature-name
 ```
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👨‍💻 Author
 
