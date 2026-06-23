@@ -1,6 +1,7 @@
 # 🎨 Artifex
 
 > Managing digital art collections, artists, and museum events.
+---
 
 🔗 **Live Website:**  
 [https://artifex-ajiet.vercel.app/](https://artifex-ajiet.vercel.app/)
