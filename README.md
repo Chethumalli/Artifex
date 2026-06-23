@@ -97,7 +97,7 @@ npm run server
 
 ### Run frontend only
 ```bash
-npm run client
+npm run dev
 ```
 
 ---
