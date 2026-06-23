@@ -8,6 +8,9 @@
 
 Artifex is a powerful web platform designed for artists, curators, and collectors to create, manage, and showcase digital artworks.  
 It provides tools for collaboration, secure transactions, analytics, and event management.
+
+---
+
 🔗 **Live Website:**  
 [https://artifex-ajiet.vercel.app/](https://artifex-ajiet.vercel.app/)
 
