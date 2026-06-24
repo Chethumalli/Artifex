@@ -13,44 +13,50 @@ export default async function ProjectsPage() {
   const repos = await getRepos();
 
   const featuredProjects = [
-    {
-      title: "AI-Based Elderly Fall Detection Smartwatch",
-      description:
-        "TinyML-powered wearable system using ESP32, MPU6050 and TensorFlow Lite for real-time fall detection and emergency caregiver alerts.",
-      tech: "ESP32 • TensorFlow Lite • IoT",
-    },
-    {
-      title: "Face Recognition Attendance System",
-      description:
-        "Automated attendance management system using facial recognition and computer vision technologies.",
-      tech: "Python • OpenCV • Streamlit",
-    },
-    {
-      title: "AI Speech-to-Text Converter",
-      description:
-        "Converts audio and video recordings into accurate text transcripts using speech recognition models.",
-      tech: "Python • Whisper • Streamlit",
-    },
-    {
-      title: "Student Performance Predictor",
-      description:
-        "Machine learning model that predicts student academic performance and learning outcomes.",
-      tech: "Machine Learning • Python",
-    },
-    {
-      title: "Crop Disease Detection System",
-      description:
-        "Deep learning solution for identifying crop diseases from leaf images and assisting farmers with recommendations.",
-      tech: "TensorFlow • CNN • Computer Vision",
-    },
-    {
-      title: "AINNOVATE 2025 Innovation Projects",
-      description:
-        "Collection of innovative AI-driven solutions developed during the Artifex AI Ideathon Sprint Challenge.",
-      tech: "Artificial Intelligence • Innovation",
-    },
-  ];
-
+  {
+    title: "AI-Based Elderly Fall Detection Smartwatch",
+    description:
+      "TinyML-powered wearable system using ESP32, MPU6050 and TensorFlow Lite for real-time fall detection and emergency caregiver alerts. on going project not yet completed",
+    tech: "ESP32 • TensorFlow Lite • IoT" ,
+  },
+  {
+    title: "Face Recognition Attendance System",
+    description:
+      "Automated attendance management system using facial recognition and computer vision technologies.",
+    tech: "Python • OpenCV • Streamlit",
+    github:
+      "https://github.com/Chethumalli/face-recognition-attendance-system",
+  },
+  {
+    title: "AI Speech-to-Text Converter",
+    description:
+      "Converts audio and video recordings into accurate text transcripts using speech recognition models.",
+    tech: "Python • Whisper • Streamlit",
+    github:
+      "https://github.com/Chethumalli/AI-Speech-to-Text-Converter",
+  },
+  {
+    title: "Student Performance Predictor",
+    description:
+      "Machine learning model that predicts student academic performance and learning outcomes.",
+    tech: "Machine Learning • Python",
+    github: "https://github.com/Chethumalli/Student-Grade-Management-System-Python-CLI-Project-",
+  },
+  {
+    title: "Plant Disease Detection System",
+    description:
+      "Deep learning solution for identifying crop diseases from leaf images and assisting farmers with recommendations.",
+    tech: "TensorFlow • CNN • Computer Vision",
+    github: "https://github.com/raj20-Anu/Plant-disease-advisory-system",
+  },
+  {
+    title: "AINNOVATE 2025 Innovation Projects",
+    description:
+      "Collection of innovative AI-driven solutions developed during the Artifex AI Ideathon Sprint Challenge.",
+    tech: "Artificial Intelligence • Innovation",
+    github: "https://github.com/Artifex-AIML",
+  },
+];
   return (
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -70,25 +76,34 @@ export default async function ProjectsPage() {
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="card hover:scale-105 transition-all duration-300"
-            >
-              <h3 className="text-xl font-bold highlight">
-                {project.title}
-              </h3>
+  {featuredProjects.map((project, index) => (
+    <div
+      key={index}
+      className="card hover:scale-105 transition-all duration-300"
+    >
+      <h3 className="text-xl font-bold highlight">
+        {project.title}
+      </h3>
 
-              <p className="subtext mt-3 leading-relaxed">
-                {project.description}
-              </p>
+      <p className="subtext mt-3 leading-relaxed">
+        {project.description}
+      </p>
 
-              <p className="mt-4 text-cyan-300 text-sm">
-                {project.tech}
-              </p>
-            </div>
-          ))}
-        </div>
+      <p className="mt-4 text-cyan-300 text-sm">
+        {project.tech}
+      </p>
+
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="primary-btn inline-block mt-5"
+      >
+        View Project
+      </a>
+    </div>
+  ))}
+</div>
 
         {/* Open Source Repositories */}
         <h2 className="text-4xl font-bold text-center mb-12">
