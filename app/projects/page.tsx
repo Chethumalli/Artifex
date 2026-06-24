@@ -1,7 +1,9 @@
 async function getRepos() {
   const res = await fetch(
     "https://api.github.com/orgs/Artifex-AIML/repos",
-    { cache: "no-store" }
+    {
+      cache: "no-store",
+    }
   );
 
   return res.json();
@@ -10,53 +12,122 @@ async function getRepos() {
 export default async function ProjectsPage() {
   const repos = await getRepos();
 
+  const featuredProjects = [
+    {
+      title: "AI-Based Elderly Fall Detection Smartwatch",
+      description:
+        "TinyML-powered wearable system using ESP32, MPU6050 and TensorFlow Lite for real-time fall detection and emergency caregiver alerts.",
+      tech: "ESP32 • TensorFlow Lite • IoT",
+    },
+    {
+      title: "Face Recognition Attendance System",
+      description:
+        "Automated attendance management system using facial recognition and computer vision technologies.",
+      tech: "Python • OpenCV • Streamlit",
+    },
+    {
+      title: "AI Speech-to-Text Converter",
+      description:
+        "Converts audio and video recordings into accurate text transcripts using speech recognition models.",
+      tech: "Python • Whisper • Streamlit",
+    },
+    {
+      title: "Student Performance Predictor",
+      description:
+        "Machine learning model that predicts student academic performance and learning outcomes.",
+      tech: "Machine Learning • Python",
+    },
+    {
+      title: "Crop Disease Detection System",
+      description:
+        "Deep learning solution for identifying crop diseases from leaf images and assisting farmers with recommendations.",
+      tech: "TensorFlow • CNN • Computer Vision",
+    },
+    {
+      title: "AINNOVATE 2025 Innovation Projects",
+      description:
+        "Collection of innovative AI-driven solutions developed during the Artifex AI Ideathon Sprint Challenge.",
+      tech: "Artificial Intelligence • Innovation",
+    },
+  ];
+
   return (
     <section className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
-
-        <h1 className="text-4xl font-bold text-center mb-16">
-          Artifex AI Projects
+      <div className="max-w-7xl mx-auto px-6">
+        <h1 className="text-5xl font-bold text-center mb-4">
+          Artifex Innovation Showcase
         </h1>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <p className="text-center subtext max-w-3xl mx-auto mb-16">
+          Explore projects developed by Artifex members in Artificial
+          Intelligence, Machine Learning, Computer Vision, IoT,
+          Generative AI, Full Stack Development, and emerging technologies.
+        </p>
 
-          {repos.map((repo: any) => (
+        {/* Featured Student Projects */}
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Featured Student Projects
+        </h2>
 
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          {featuredProjects.map((project, index) => (
             <div
-              key={repo.id}
-              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 hover:scale-105 transition"
+              key={index}
+              className="card hover:scale-105 transition-all duration-300"
             >
+              <h3 className="text-xl font-bold highlight">
+                {project.title}
+              </h3>
 
-              <h2 className="text-xl font-semibold">
-                {repo.name}
-              </h2>
-
-              <p className="text-gray-200 mt-3 text-sm">
-                {repo.description || "AI/ML project by Artifex team"}
+              <p className="subtext mt-3 leading-relaxed">
+                {project.description}
               </p>
 
-              <div className="flex justify-between items-center mt-5">
-
-                <span className="text-purple-200 text-sm">
-                  ⭐ {repo.stargazers_count}
-                </span>
-
-                <a
-                  href={repo.html_url}
-                  target="_blank"
-                  className="bg-purple-600 px-4 py-2 rounded-md hover:bg-purple-500"
-                >
-                  View Repo
-                </a>
-
-              </div>
-
+              <p className="mt-4 text-cyan-300 text-sm">
+                {project.tech}
+              </p>
             </div>
-
           ))}
-
         </div>
 
+        {/* Open Source Repositories */}
+        <h2 className="text-4xl font-bold text-center mb-12">
+          Open Source Repositories
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Array.isArray(repos) &&
+            repos.map((repo: any) => (
+              <div
+                key={repo.id}
+                className="card hover:scale-105 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold highlight mb-3">
+                  {repo.name}
+                </h3>
+
+                <p className="subtext text-sm leading-relaxed min-h-[80px]">
+                  {repo.description ||
+                    "Open-source project developed by Artifex AI & Machine Learning Association."}
+                </p>
+
+                <div className="flex justify-between items-center mt-6">
+                  <span className="text-cyan-300 text-sm">
+                    ⭐ {repo.stargazers_count}
+                  </span>
+
+                  <a
+                    href={repo.html_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="primary-btn"
+                  >
+                    View Repo
+                  </a>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     </section>
   );

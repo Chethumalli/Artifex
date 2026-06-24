@@ -36,7 +36,16 @@ body::before{
     transparent 60%
   );
   pointer-events:none;
-  z-index:-1;
+  z-index:-2;
+}
+
+
+/* ensure particles stay behind */
+
+canvas{
+  position: fixed !important;
+  inset: 0;
+  z-index: -1;
 }
 
 

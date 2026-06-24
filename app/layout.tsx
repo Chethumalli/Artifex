@@ -29,14 +29,12 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
         {/* Global particles background */}
-        <ParticlesBackground />
+       <ParticlesBackground />
+<Navbar />
 
-        {/* Website UI */}
-        <Navbar />
-
-        <main className="relative z-10 min-h-screen">
-          {children}
-        </main>
+<main className="relative z-10 min-h-screen">
+  {children}
+</main>
 
       </body>
     </html>

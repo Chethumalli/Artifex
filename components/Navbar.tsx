@@ -11,13 +11,13 @@ export default function Navbar() {
 
         <Link href="/" className="flex items-center gap-3">
 
-          <Image
-            src="/logo.png"
-            alt="Artifex Logo"
-            width={40}
-            height={40}
-          />
-
+         <Image
+  src="/logo.png"
+  alt="Artifex Logo"
+  width={40}
+  height={40}
+  style={{ height: "auto" }}
+/>
           <span className="text-xl font-bold tracking-wide highlight">
             ARTIFEX
           </span>
