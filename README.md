@@ -12,7 +12,7 @@ It provides tools for collaboration, secure transactions, analytics, and event m
 ---
 
 🔗 **Live Website:**  
-[(https://artifex-ajiet.vercel.app/)](https://artifexaiml.vercel.app/)
+[https://artifex-ajiet.vercel.app/](https://artifex-ajiet.vercel.app/)
 
 ---
 
